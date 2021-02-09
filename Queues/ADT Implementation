@@ -1,0 +1,48 @@
+#include<iostream>
+#define max 10
+using namespace std;
+int queue[max],front=-1,rear=-1;
+
+void push(int val){
+	if(rear==max-1){
+		cout<<"Overflow - Queue is Full"<<endl;
+	}else{
+		rear++;
+		queue[rear] = val;
+	}
+}
+
+void pop(){
+	if(front==rear){
+		cout<<"Underflow - Queue is Empty";
+	}else{
+		front++;
+		cout<<"Element deleted is:"<<queue[front]<<endl;
+	}
+}
+
+void display(){
+	if(front!=rear){
+		for(int i=front+1;i<=rear;i++){
+			cout<<queue[i]<<" ";
+		}cout<<endl;
+	}else{
+		cout<<"Queue is Empty."<<endl;
+	}
+}
+
+int main()
+{
+	push(1);
+	push(2);
+	push(3);
+	push(4);
+	push(5);
+	pop();
+	push(11);
+	pop();
+	pop();
+	push(9);
+	display();
+	
+}
