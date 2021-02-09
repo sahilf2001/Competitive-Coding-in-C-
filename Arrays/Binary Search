@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int RBsearch(int arr[],int left,int right,int key)
+{
+	int mid;
+	if(right>=left){
+		mid = (left+right)/2;
+		if(arr[mid]==key){
+			return mid;
+		}else if(key>arr[mid]){
+			return RBsearch(arr,mid,right,key);
+		}else{
+			return RBsearch(arr,left,mid,key);
+		}
+	}else{
+		return -1;
+	}
+}
+
+
+
+
+int main(){
+	int a[7] = {0,2,3,4,10,40,44};
+    int index;
+	index = RBsearch(a,0,6,10);
+	cout<<"Element is found at index: "<<index;
+}
