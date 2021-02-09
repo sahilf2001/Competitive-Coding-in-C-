@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+
+int sums(int n){
+	if(n>0){
+		return (n%10)+sums(n/10);
+	}
+}
+
+int main()
+{
+  int num = 687,s;
+  s = sums(num);
+  cout<<s;
+
+}
